@@ -29,6 +29,8 @@
   border-radius: 50px 0px;
   width: calc(100% - 10px);
   @include mq(mob-only) {
+    min-height: 120px;
+    min-width: 120px;
   }
 
   @include mq(tab) {
