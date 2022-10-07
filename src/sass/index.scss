@@ -1,0 +1,22 @@
+// COMMON AND RESET
+@import './utils/normalize';
+@import './utils/reset';
+@import './utils/decimals';
+@import './utils/variables';
+@import './utils/mixins';
+@import './utils/common';
+@import './utils/container';
+
+// MAIN PAGE COMPONENTS
+@import './components/buttons';
+
+// LAYOut
+// Header
+@import './layout/header';
+
+// Main
+@import './layout/main';
+@import './layout/modal_window';
+
+// Footer
+@import './layout/footer';
