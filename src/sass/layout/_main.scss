@@ -35,10 +35,12 @@
 
   @include mq(tab) {
     width: 141px;
+    height: 120px;
   }
 
   @include mq(desk) {
     width: 267px;
+    height: 200px;
   }
 }
 
@@ -66,11 +68,11 @@
   }
 
   @include mq(desk) {
-    width: 267px;
-    height: 220px;
+    width: 227px;
+    height: 200px;
 
     bottom: 19px;
-    left: 21px;
+    left: 61px;
   }
 }
 
