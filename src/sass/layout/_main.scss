@@ -27,9 +27,8 @@
 
 .gallery-link__img {
   border-radius: 50px 0px;
-  width: 120px;
+  width: calc(100% - 10px);
   @include mq(mob-only) {
-    height: 120px;
   }
 
   @include mq(tab) {
@@ -52,8 +51,8 @@
   left: 10px;
   border: 1px solid red;
   border-radius: 50px 0px;
-  width: 120px;
-  height: 120px;
+  width: calc(100% - 10px);
+  height: 100%;
   z-index: -1;
 
   @include mq(tab) {
