@@ -1,211 +1,215 @@
-.header{
-    position: relative;
-padding-top: 78px;
+.header {
+  position: relative;
+  padding-top: 78px;
 
-@media screen and (min-width: (768px - 0.02)) {
-        padding-top: 40px;
-    }
+  @media screen and (min-width: (768px - 0.02)) {
+    padding-top: 40px;
+  }
 
-
-
-
-         background-image: linear-gradient(rgba(11, 11, 11, 0.5), rgba(11, 11, 11, 0.5)),
-       
-         url(../images/mainMob@1x.png);
-                 background-size: 320px 364px;
-                                  background-position: center;
-                                  background-size: cover;
-                                  background-repeat: no-repeat;
+  background-image: linear-gradient(
+      rgba(11, 11, 11, 0.5),
+      rgba(11, 11, 11, 0.5)
+    ),
+    url(../images/mainMob@1x.png);
+  background-size: 320px 364px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-                @media (min-device-pixel-ratio: 2),
-                (min-resolution: 192dpi),
-                (min-resolution: 2dppx) {
-                    .header {
-                        background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/mainMob@2x.png);
-                    }
-                }
-        
-                @media screen and (min-width: (768px - 0.02)) {
-                    .header {
-                        background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/main\ tablet@1x.png);
-                    }
-                }
-        
-                @media screen and (min-width: (768px - 0.02)) and (min-device-pixel-ratio: 2),
-                screen and (min-width: (768px - 0.02)) and (min-resolution: 192dpi),
-                screen and (min-width: (768px - 0.02)) and (min-resolution: 2dppx) {
-                    .header {
-                        background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/main\ tablet\ @2x.png);
-                    }
-                }
-        
-                @media screen and (min-width: (1280px - 0.02)) {
-                    .header {
-                        background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/main\ desk@1x.png);
-                        
-                    }
-                }
-        
-                @media screen and (min-width: (1280px - 0.02)) and (min-device-pixel-ratio: 2),
-                screen and (min-width: (1280px - 0.02)) and (min-resolution: 192dpi),
-                screen and (min-width: (1280px - 0.02)) and (min-resolution: 2dppx) {
-                    .header {
-                        background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/main\ desk@2x.png);
-                    }
-                }
+@media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .header {
+    background-image: linear-gradient(
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.4)
+      ),
+      url(../images/mainMob@2x.png);
+  }
+}
 
+@media screen and (min-width: (768px - 0.02)) {
+  .header {
+    background-image: linear-gradient(
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.4)
+      ),
+      url(../images/main\ tablet@1x.png);
+  }
+}
 
+@media screen and (min-width: (768px - 0.02)) and (min-device-pixel-ratio: 2),
+  screen and (min-width: (768px - 0.02)) and (min-resolution: 192dpi),
+  screen and (min-width: (768px - 0.02)) and (min-resolution: 2dppx) {
+  .header {
+    background-image: linear-gradient(
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.4)
+      ),
+      url(../images/main\ tablet\ @2x.png);
+  }
+}
+
+@media screen and (min-width: (1280px - 0.02)) {
+  .header {
+    background-image: linear-gradient(
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.4)
+      ),
+      url(../images/main\ desk@1x.png);
+  }
+}
+
+@media screen and (min-width: (1280px - 0.02)) and (min-device-pixel-ratio: 2),
+  screen and (min-width: (1280px - 0.02)) and (min-resolution: 192dpi),
+  screen and (min-width: (1280px - 0.02)) and (min-resolution: 2dppx) {
+  .header {
+    background-image: linear-gradient(
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.4)
+      ),
+      url(../images/main\ desk@2x.png);
+  }
+}
 
 .header-box {
-    position: relative;
-    z-index: 13;
-    padding-bottom: 112px;
+  position: relative;
+  z-index: 13;
+  padding-bottom: 112px;
 
-    @media screen and (min-width: (768px - 0.02)) {
-        padding-bottom: 183px;
-        border-left: 1px solid #212121;
-        border-right: 1px solid #212121;
-        margin-left: 5px;
-        margin-right: 5px;
-    }
+  @media screen and (min-width: (768px - 0.02)) {
+    padding-bottom: 183px;
+    border-left: 1px solid #212121;
+    border-right: 1px solid #212121;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
 
-    @media screen and (min-width: (1280px - 0.02)) {
-        padding-bottom: 192px;
-        margin-left: -61px;
-        margin-right: -60px;
-    }
+  @media screen and (min-width: (1280px - 0.02)) {
+    padding-bottom: 192px;
+    margin-left: -61px;
+    margin-right: -60px;
+  }
 }
 .header-title {
-    margin-right: auto;
+  margin-right: auto;
 }
 
 .header-title {
-    margin-right: auto;
-    margin-left: auto;
-    margin-bottom: 25px;
-    width: 212px;
-    height: 44px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 25px;
+  width: 212px;
+  height: 44px;
 
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 900;
-    font-size: 18px;
-    line-height: 22px;
-    text-align: center;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
 
-    color: #dc56c5;
+  color: #dc56c5;
 
-@media screen and (min-width: (768px - 0.02)) {
-        margin-bottom: 27px;
+  @media screen and (min-width: (768px - 0.02)) {
+    margin-bottom: 27px;
 
-        font-size: 30px;
-        line-height: 37px;
+    font-size: 30px;
+    line-height: 37px;
 
-        width: 353px;
-        height: 74px;
-    }
+    width: 353px;
+    height: 74px;
+  }
 
-          @media screen and (min-width: (1280px - 0.02)) {
-              margin-bottom: 52px;
-    
-              font-size: 50px;
-              line-height: 61px;
-    
-              width: 650px;
-              height: 122px;
-          }
-          
+  @media screen and (min-width: (1280px - 0.02)) {
+    margin-bottom: 52px;
 
-   
+    font-size: 50px;
+    line-height: 61px;
+
+    width: 650px;
+    height: 122px;
+  }
 }
 .post {
-    @media screen and (min-width: (768px - 0.02)) {
-        display: flex;
-        justify-content: center;
-    }
+  @media screen and (min-width: (768px - 0.02)) {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .form {
-    position: relative;
-    margin-right: auto;
-    margin-left: auto;
-    margin-bottom: 25px;
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 25px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  width: 270px;
+
+  @media screen and (min-width: (768px - 0.02)) {
+    margin-left: 0;
+    margin-right: 30px;
 
     &:last-child {
-        margin-bottom: 0;
+      margin: 0;
     }
-
-    width: 270px;
-
-    @media screen and (min-width: (768px - 0.02)) {
-        margin-left: 0;
-        margin-right: 30px;
-
-        &:last-child {
-            margin: 0;
-        }
-    }
+  }
 }
 
 .input {
-    width: 270px;
-    height: 40px;
-    padding-left: 30px;
-    padding-right: 30px;
-    font-weight: 400;
-    font-size: 16px;
-    border-radius: 20px;
-    outline: none;
-    border: none;
-    background-color: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(20px);
-    color: #ffffff;
+  width: 270px;
+  height: 40px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-weight: 400;
+  font-size: 16px;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  color: #ffffff;
 }
 
 .input::placeholder {
-    color: #939393;
+  color: #939393;
 }
 
 .input.select-country {
-    font-size: 16px;
-    font-family: sans-serif;
-    line-height: 1.3;
-    padding: 0.6em 1.4em 0.5em 0.8em;
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-    margin: 0;
-    box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
-    appearance: none;
-    // background-image: url();
-    background-repeat: no-repeat, repeat;
-    background-position: right 1.4em top 50%, 0 0;
-    background-size: 0.65em auto, 100%;
+  font-size: 16px;
+  font-family: sans-serif;
+  line-height: 1.3;
+  padding: 0.6em 1.4em 0.5em 0.8em;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
+  appearance: none;
+  // background-image: url();
+  background-repeat: no-repeat, repeat;
+  background-position: right 1.4em top 50%, 0 0;
+  background-size: 0.65em auto, 100%;
 }
-
-
 
 .button {
-    position: absolute;
-    
-    padding-right: 30px;
-    font-weight: 400;
-    font-size: 16px;
-    top: 0;
-    right: 0px;
-    width: 40px;
-    height: 40px;
-    border: none;
-    background-color: inherit;
-    border-radius: 20px;
-    cursor: pointer;
-    color: #939393;
+  position: absolute;
+
+  padding-right: 30px;
+  font-weight: 400;
+  font-size: 16px;
+  top: 0;
+  right: 0px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: inherit;
+  border-radius: 20px;
+  cursor: pointer;
+  color: #939393;
 }
-
-
-
-
-
-
-

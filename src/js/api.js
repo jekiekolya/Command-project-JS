@@ -1,3 +1,4 @@
+import axios from 'axios';
 const BASE_URL = 'https://app.ticketmaster.com/discovery/v2';
 const KEY = 'cMgNevJhP92xGIzmygmG3mL7Thmyi754';
 
@@ -24,8 +25,7 @@ export default class SearchService {
 
   async fetchDefoltEvent() {
     const url = `${BASE_URL}/events.json?apikey=${KEY}&size=16&page=1`;
-    return fetch(url)
-      .then(data => data.json())
-      .catch(err => console.log('error'));
+    const data = await axios.get(url);
+    return data.data._embedded.events;
   }
 }
