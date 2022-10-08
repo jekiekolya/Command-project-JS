@@ -14,9 +14,13 @@ async function fetchData(e) {
   const data = await searchService
     .fetchApiEvent(searchQuery, country, page)
     .then(res => res._embedded.events)
-    .catch(err => alert('Ми нічого не знайшли'));
+    .catch(err => {
+      alert('Ми нічого не знайшли');
+    });
   clearData();
-  createMarkup(data);
+  if (data) {
+    createMarkup(data);
+  }
 }
 
 /*============================================= main page====================================================== */
@@ -57,15 +61,19 @@ function clearData() {
 }
 
 function rightPhotoUrl(array) {
-  if (window.devicePixelRatio === 1) {
-    const photo = array.filter(photo => photo.url.includes('CUSTOM'));
+  try {
+    if (window.devicePixelRatio === 1) {
+      const photo = array.filter(photo => photo.url.includes('CUSTOM'));
 
-    return photo[0].url;
-  } else {
-    const retinaPhoto = array
-      .filter(photo => photo.url.includes('RETINA'))
-      .filter(photo => photo.ratio.includes('3_2'));
-    return retinaPhoto[0].url;
+      return photo[0].url;
+    } else {
+      const retinaPhoto = array
+        .filter(photo => photo.url.includes('RETINA'))
+        .filter(photo => photo.ratio.includes('3_2'));
+      return retinaPhoto[0].url;
+    }
+  } catch (error) {
+    return array[0].url;
   }
 }
 
