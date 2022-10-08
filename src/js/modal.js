@@ -3,7 +3,6 @@ const ref = {
   boxItems: document.querySelector('.gallery'),
   backDrop: document.querySelector('.modal__backdrop'),
   buttonCloseModal: document.querySelector('.close-modal'),
-  test: document.querySelector('.modal__backdrop.is-hidden .modal__window'),
 };
 
 // Add event listener for open
