@@ -13,10 +13,10 @@ export default class SearchService {
 
       const response = await fetch(url);
       const data = await response.json();
-      const { _embedded } = data;
+      //   const { _embedded } = data;
 
-      return _embedded ? _embedded.events : null;
-      // return await data;
+      //   return _embedded ? _embedded.events : null;
+      return await data;
     } catch (error) {
       console.log(error);
     }
