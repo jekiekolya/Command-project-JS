@@ -20,6 +20,7 @@
   "dependencies": {
     "axios": "^1.1.2",
     "modern-normalize": "^1.1.0",
+    "notiflix": "^3.2.5",
     "paginationjs": "^2.1.5"
   },
   "devDependencies": {
