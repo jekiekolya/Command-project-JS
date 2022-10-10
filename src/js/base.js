@@ -1,4 +1,6 @@
 import SearchService from './api';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 import Notiflix from 'notiflix';
 const searchService = new SearchService();
 
@@ -42,14 +44,15 @@ function createMarkup(array) {
   const cards = array
     .map(card => {
       return `<li class="gallery__itams">
-          <div class="gallery-link" event-id="${i++}" data-id="${
+          <div class="gallery-link" data-eventID="${i++}" data-id="${
         card.id
       }" href="${card.url}">
             <div class="gallary-link__wrap">
               <div class="gallary-link__border"></div>
               <img
-                class="gallery-link__img"
-                src="${rightPhotoUrl(card.images)}"
+                class="gallery-link__img lazyload"
+                src="${lowQualitiPhotoPicker(card.images)}"
+                data-src="${rightPhotoUrl(card.images)}"
                 alt=""
               />
             </div>
@@ -70,6 +73,14 @@ function createMarkup(array) {
 function clearData() {
   const gallery = document.querySelector('.gallery');
   gallery.innerHTML = '';
+}
+
+function lowQualitiPhotoPicker(array) {
+  array.sort((a, b) => {
+    return a.width - b.width;
+  });
+
+  return array[0].url;
 }
 
 function rightPhotoUrl(array) {

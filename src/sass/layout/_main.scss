@@ -32,7 +32,6 @@
 
 .gallery-link__img {
   position: relative;
-  // z-index: 1;
   border-radius: 50px 0px;
   width: calc(100% - 10px);
   @include mq(mob-only) {
@@ -114,11 +113,6 @@
   }
 }
 
-// .gallery__svg {
-//   width: 7px;
-//   height: 10px;
-//   margin-right: 3px;
-// }
 // ============================================================
 .preloader {
   position: fixed;
