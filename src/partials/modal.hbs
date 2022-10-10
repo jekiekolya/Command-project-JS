@@ -1,4 +1,4 @@
-<div class="modal">
+<div class="modal-wrapper">
   <button class="modal-close-btn">
     <svg class="modal-close-icon" viewBox="0 0 17 17">
       <path
@@ -44,6 +44,7 @@
           {{#each prices}}
             <div class="buy-tickets">
               <p class="ticket-standart ticket">{{type}} {{min}} - {{max}} {{currency}}</p>
+              <p class="ticket-vip ticket">{{type}} {{min}} - {{max}} {{currency}}</p>
               <a href='{{../url}}' class="modal-btn btn-buy">BUY TICKETS</a>
             </div>
           {{/each}}
@@ -54,3 +55,6 @@
 
   <button class="modal-btn more-btn" data-author='{{name}}'>MORE FROM THIS AUTHOR</button>
 </div>
+
+
+
