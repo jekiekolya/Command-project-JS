@@ -1,4 +1,6 @@
 import SearchService from './api';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 import Notiflix from 'notiflix';
 const searchService = new SearchService();
 
@@ -36,22 +38,27 @@ async function fetchData(e) {
 
 /*============================================= main page====================================================== */
 function createMarkup(array) {
+  localStorage.setItem('eventsData', JSON.stringify(array));
   const gallery = document.querySelector('.gallery');
+  let i = 0;
   const cards = array
     .map(card => {
       return `<li class="gallery__itams">
-          <a class="gallery-link" data-id="${card.id}" href="${card.url}">
+          <div class="gallery-link" data-eventID="${i++}" data-id="${
+        card.id
+      }" href="${card.url}">
             <div class="gallary-link__wrap">
               <div class="gallary-link__border"></div>
               <img
-                class="gallery-link__img"
-                src="${rightPhotoUrl(card.images)}"
+                class="gallery-link__img lazyload"
+                src="${lowQualitiPhotoPicker(card.images)}"
+                data-src="${rightPhotoUrl(card.images)}"
                 alt=""
               />
             </div>
 
-            <h2 class="gallary-link__title">${card.name}</h2></a
-          >
+            <h2 class="gallary-link__title">${card.name}</h2>
+            </div>
           <p class="gallery__date">${card.dates.start.localDate}</p>
           <a class="gallery__place" href="">
            
@@ -68,7 +75,19 @@ function clearData() {
   gallery.innerHTML = '';
 }
 
+function lowQualitiPhotoPicker(array) {
+  array.sort((a, b) => {
+    return a.width - b.width;
+  });
+
+  return array[0].url;
+}
+
 function rightPhotoUrl(array) {
+  array.sort((a, b) => {
+    return a.width - b.width;
+  });
+
   try {
     if (window.devicePixelRatio === 1) {
       const photo = array.filter(photo => photo.url.includes('CUSTOM'));
