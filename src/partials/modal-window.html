@@ -1,13 +1,13 @@
-<div class="backdrop is-hidden" data-modal>
-  <div class="modal">
+<div class="modal__backdrop is-hidden" data-modal>
+  <div class="modal__window">
     <button class="modal-btn__close" data-modal-close>
       <svg class="modal-btn__close-icon" width="25" height="25">
         <path
-          d="M1.646 32c-0.422 0-0.843-0.16-1.163-0.483-0.643-0.643-0.643-1.685 0-2.328l28.707-28.707c0.643-0.643 1.685-0.643 2.328 0s0.643 1.685 0 2.329l-28.707 28.706c-0.323 0.321-0.744 0.483-1.165 0.483z"
-        ></path>
+          d="M1.28557 25C0.95625 25 0.626931 24.8747 0.376724 24.6227C-0.125575 24.1204 -0.125575 23.306 0.376724 22.8038L22.8043 0.376714C23.3066 -0.125571 24.121 -0.125571 24.6233 0.376714C25.1256 0.878999 25.1256 1.69333 24.6233 2.19593L2.19598 24.6227C1.94389 24.8732 1.61457 25 1.28557 25V25Z"
+        />
         <path
-          d="M30.355 32c-0.422 0-0.843-0.16-1.163-0.483l-28.709-28.706c-0.643-0.643-0.643-1.686 0-2.329s1.685-0.643 2.329 0l28.707 28.707c0.643 0.643 0.643 1.685 0 2.328-0.323 0.321-0.744 0.483-1.163 0.483z"
-        ></path>
+          d="M23.7147 25C23.3854 25 23.0564 24.8747 22.8059 24.6227L0.376724 2.19593C-0.125574 1.69333 -0.125574 0.878999 0.376724 0.376714C0.879022 -0.125571 1.69337 -0.125571 2.19598 0.376714L24.6233 22.8038C25.1256 23.306 25.1256 24.1204 24.6233 24.6227C24.3712 24.8732 24.0422 25 23.7147 25Z"
+        />
       </svg>
     </button>
     <img class="modal__img-small" alt="" width="132" />
@@ -15,24 +15,39 @@
     <div class="modal__float">
       <div class="modal__text-block">
         <h3 class="modal__title">Info</h3>
-        <p class="modal__text"></p>
+        <p class="modal__text modal-info">
+          Atlas Weekend is the largest music festival in Ukraine.More than 200
+          artists will create a proper music festival atmosphere on 10 stages
+        </p>
       </div>
       <div class="modal__text-block">
         <h3 class="modal__title">When</h3>
-        <p class="modal__text"></p>
+        <p class="modal__text">
+          <span class="event-date">2021-06-09</span>
+          <div class="event-line-text">
+         <span class="event-time">20:00</span>
+          <span class="event-timezone">(Kyiv/Ukraine)</span>
+        </div>
+        </p>
       </div>
       <div class="modal__text-block">
         <h3 class="modal__title">Where</h3>
-        <p class="modal__text"></p>
+        <p class="modal__text">
+          <div class="event-line-text">
+        <span class="event-city">Kyiv</span>,
+          <span class="event-country">Ukraine</span>
+          </div>
+          <span class="event-location">VDNH</span>
+        </p>
       </div>
       <div class="modal__text-block">
         <h3 class="modal__title">Who</h3>
-        <p class="modal__text"></p>
+        <p class="modal__text event-name">The Black Eyed Peas</p>
       </div>
       <div class="modal__prices-block">
         <h3 class="modal__title">Prices</h3>
         <ul class="modal__prices">
-          <li class="modal__thumb-item">
+          <li class="modal__thumb-item price1">
             <p class="modal__text">
               <svg class="modal__prices-icon" width="29" height="19">
                 <path d="M4.91 1.27h-4.91v29.46h4.91v-29.46z"></path>
@@ -43,26 +58,36 @@
                 <path d="M29.46 1.27h-2.381v29.46h2.381v-29.46z"></path>
                 <path d="M34.37 1.27h-2.381v29.46h2.381v-29.46z"></path>
               </svg>
+              <div class="event-line-text">
+                <span class="price1__type">Standart</span>
+               <span class="price1__range">300-500</span>
+               <span class="price1__currency">UAH</span>
+              </div>
+            </p>
+            <a class="modal__btn modal__link-buy">Buy ticket</a>
+          </li>
+          <li class="modal__thumb-item price2 is-hidden">
+            <p class="modal__text">
+              <svg class="modal__prices-icon" width="29" height="19">
+                <path d="M4.91 1.27h-4.91v29.46h4.91v-29.46z"></path>
+                <path d="M17.26 1.27h-4.91v29.46h4.91v-29.46z"></path>
+                <path d="M24.699 1.27h-4.91v29.46h4.91v-29.46z"></path>
+                <path d="M44.19 1.27h-7.291v29.46h7.291v-29.46z"></path>
+                <path d="M9.82 1.27h-2.381v29.46h2.381v-29.46z"></path>
+                <path d="M29.46 1.27h-2.381v29.46h2.381v-29.46z"></path>
+                <path d="M34.37 1.27h-2.381v29.46h2.381v-29.46z"></path>
+              </svg>
+              <div class="event-line-text">
+                <span class="price2__type">VIP</span>
+               <span class="price2__range">1000-1500</span>
+               <span class="price2__currency">UAH</span>
+              
+              </div>
             </p>
             <a class="modal__btn modal__link-buy">Buy ticket</a>
           </li>
         </ul>
       </div>
-
-      <li class="modal__thumb-item">
-        <p class="modal__text">
-          <svg class="modal__prices-icon" width="29" height="19">
-            <path d="M4.91 1.27h-4.91v29.46h4.91v-29.46z"></path>
-            <path d="M17.26 1.27h-4.91v29.46h4.91v-29.46z"></path>
-            <path d="M24.699 1.27h-4.91v29.46h4.91v-29.46z"></path>
-            <path d="M44.19 1.27h-7.291v29.46h7.291v-29.46z"></path>
-            <path d="M9.82 1.27h-2.381v29.46h2.381v-29.46z"></path>
-            <path d="M29.46 1.27h-2.381v29.46h2.381v-29.46z"></path>
-            <path d="M34.37 1.27h-2.381v29.46h2.381v-29.46z"></path>
-          </svg>
-        </p>
-        <a class="modal__btn modal__link-buy">Buy ticket</a>
-      </li>
     </div>
     <button class="modal__btn modal__btn-more">More from this author</button>
   </div>
