@@ -7,7 +7,7 @@ const searchService = new SearchService();
 const inputRef = document.querySelector('.input-text');
 const formRef = document.querySelector('form');
 let country = '';
-let page = 1;
+let page = 0;
 
 window.onload = function () {
   document.body.classList.add('loaded_hiding');
@@ -43,10 +43,10 @@ function createMarkup(array) {
   let i = 0;
   const cards = array
     .map(card => {
-      return `<li class="gallery__itams">
-          <a class="gallery-link" data-eventID="${i++}" data-id="${
+      return `<li class="gallery__itams" data-eventID="${i++}" data-id="${
         card.id
-      }" href="${card.url}">
+      }">
+          <a class="gallery-link" href="${card.url}">
             <div class="gallary-link__wrap">
               <div class="gallary-link__border"></div>
               <img
