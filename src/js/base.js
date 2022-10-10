@@ -1,10 +1,19 @@
 import SearchService from './api';
+import Notiflix from 'notiflix';
 const searchService = new SearchService();
 
 const inputRef = document.querySelector('.input-text');
 const formRef = document.querySelector('form');
 let country = '';
 let page = 1;
+
+window.onload = function () {
+  document.body.classList.add('loaded_hiding');
+  window.setTimeout(function () {
+    document.body.classList.add('loaded');
+    document.body.classList.remove('loaded_hiding');
+  }, 500);
+};
 
 formRef.addEventListener('submit', fetchData);
 
@@ -15,7 +24,9 @@ async function fetchData(e) {
     .fetchApiEvent(searchQuery, country, page)
     .then(res => res._embedded.events)
     .catch(err => {
-      alert('Ми нічого не знайшли');
+      Notiflix.Notify.failure(
+        'Sorry, we did not find anything, refine your query'
+      );
     });
   clearData();
   if (data) {
@@ -24,13 +35,12 @@ async function fetchData(e) {
 }
 
 /*============================================= main page====================================================== */
-
 function createMarkup(array) {
   const gallery = document.querySelector('.gallery');
   const cards = array
     .map(card => {
       return `<li class="gallery__itams">
-          <a class="gallery-link" href="${card.url}">
+          <a class="gallery-link" data-id="${card.id}" href="${card.url}">
             <div class="gallary-link__wrap">
               <div class="gallary-link__border"></div>
               <img
@@ -44,9 +54,7 @@ function createMarkup(array) {
           >
           <p class="gallery__date">${card.dates.start.localDate}</p>
           <a class="gallery__place" href="">
-            <svg class="gallery__svg">
-              <use href="./images/icon-place.svg#icon-place"></use>
-            </svg>
+           
             <span>${card._embedded.venues[0].name}</span>
           </a>
         </li>`;
@@ -79,6 +87,7 @@ function rightPhotoUrl(array) {
 
 async function doMagic() {
   const data = await searchService.fetchDefoltEvent();
+
   createMarkup(data);
 }
 
