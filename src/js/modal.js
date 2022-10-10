@@ -5,9 +5,10 @@ const ref = {
   buttonCloseModal: document.querySelector('.close-modal'),
   buttonMoreLoad: document.querySelector('.more-btn'),
   inputResearch: document.querySelector('.input-text'),
+  buttonSubmit: document.querySelector('.button'),
 };
 
-// Get ref to element on window
+// Get ref to element on window where textContent is changing
 const refWindow = {
   info: document.querySelector('.info'),
   time: document.querySelector('.time'),
@@ -23,10 +24,12 @@ ref.boxItems.addEventListener('click', onClickEvent);
 
 // Open modal window
 function onClickEvent(e) {
-  if (!e.target.classList.contains('item')) return;
+  e.preventDefault();
+  if (!e.target.closest('.gallery__itams')) return;
+  let item = e.target.closest('.gallery__itams');
 
   // Get value from item and put them to window
-  let values = getValue(e.target);
+  let values = getValue(item);
   inputDataToWindow(values);
 
   // Show modal window
@@ -71,9 +74,11 @@ function OnClickBackDrop(e) {
 }
 
 // Close modal window after click on buttonLoadMore and create new fetch
-function onClickButtonLoadMore() {
+async function onClickButtonLoadMore() {
   const author = refWindow.author.textContent;
-  ref.inputResearch.setAttribute('value', `${author}`);
+
+  ref.inputResearch.value = `${author}`;
+  ref.buttonSubmit.click();
 
   // close and remove listeners
   ref.backDrop.classList.toggle('is-hidden');
@@ -85,13 +90,14 @@ function onClickButtonLoadMore() {
 
 // Get value from element
 function getValue(element) {
+  let image = element.querySelector('.gallery-link__img');
   const modalInfo = {
     info: element.dataset.info,
     time: element.dataset.time,
     position: element.dataset.position,
     author: element.dataset.author,
     price: element.dataset.price,
-    image: element.children[0].getAttribute('src'),
+    image: image.getAttribute('src'),
   };
 
   return modalInfo;
