@@ -36,11 +36,15 @@ async function fetchData(e) {
 
 /*============================================= main page====================================================== */
 function createMarkup(array) {
+  localStorage.setItem('eventsData', JSON.stringify(array));
   const gallery = document.querySelector('.gallery');
+  let i = 0;
   const cards = array
     .map(card => {
       return `<li class="gallery__itams">
-          <a class="gallery-link" data-id="${card.id}" href="${card.url}">
+          <div class="gallery-link" event-id="${i++}" data-id="${
+        card.id
+      }" href="${card.url}">
             <div class="gallary-link__wrap">
               <div class="gallary-link__border"></div>
               <img
@@ -50,8 +54,8 @@ function createMarkup(array) {
               />
             </div>
 
-            <h2 class="gallary-link__title">${card.name}</h2></a
-          >
+            <h2 class="gallary-link__title">${card.name}</h2>
+            </div>
           <p class="gallery__date">${card.dates.start.localDate}</p>
           <a class="gallery__place" href="">
            
