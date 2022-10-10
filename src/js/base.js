@@ -44,7 +44,7 @@ function createMarkup(array) {
   const cards = array
     .map(card => {
       return `<li class="gallery__itams">
-          <div class="gallery-link" data-eventID="${i++}" data-id="${
+          <a class="gallery-link" data-eventID="${i++}" data-id="${
         card.id
       }" href="${card.url}">
             <div class="gallary-link__wrap">
@@ -58,7 +58,7 @@ function createMarkup(array) {
             </div>
 
             <h2 class="gallary-link__title">${card.name}</h2>
-            </div>
+            </a>
           <p class="gallery__date">${card.dates.start.localDate}</p>
           <a class="gallery__place" href="">
            
