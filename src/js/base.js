@@ -61,6 +61,10 @@ function clearData() {
 }
 
 function rightPhotoUrl(array) {
+  array.sort((a, b) => {
+    return a.width - b.width;
+  });
+
   try {
     if (window.devicePixelRatio === 1) {
       const photo = array.filter(photo => photo.url.includes('CUSTOM'));
