@@ -5,7 +5,7 @@ const ref = {
   buttonCloseModal: document.querySelector('.modal-btn__close'),
   buttonMoreLoad: document.querySelector('.modal__btn-more'),
   inputResearch: document.querySelector('.input-text'),
-  buttonSubmit: document.querySelector('.button'),
+  buttonSubmit: document.querySelector('.button-header'),
 };
 
 // Get ref to element on window where textContent is changing
@@ -73,7 +73,7 @@ async function onClickButtonLoadMore() {
 
   ref.inputResearch.value = `${author}`;
   ref.buttonSubmit.click();
-
+  ref.inputResearch.value = `${author}`;
   // close and remove listeners
   onCloseAndRemoveListeners();
 }
