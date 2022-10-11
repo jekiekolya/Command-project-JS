@@ -39,7 +39,7 @@ function onClickEvent(e) {
   inputDataToWindow(values);
 
   // Show modal window
-  ref.backDrop.classList.toggle('is-hidden');
+  ref.backDrop.classList.toggle('hidden');
 
   // Add event listener for close modal window
   window.addEventListener('keydown', onKeydownESC);
@@ -79,14 +79,14 @@ async function onClickButtonLoadMore() {
 }
 
 function onCloseAndRemoveListeners() {
-  ref.backDrop.classList.toggle('is-hidden');
+  ref.backDrop.classList.toggle('hidden');
   window.removeEventListener('keydown', onKeydownESC);
   ref.buttonCloseModal.removeEventListener('click', onClickButtonClose);
   ref.backDrop.removeEventListener('click', OnClickBackDrop);
   ref.buttonMoreLoad.removeEventListener('click', onClickButtonLoadMore);
   setTimeout(() => {
-    refWindow.price1.classList.add('is-hidden');
-    refWindow.price1.classList.add('is-hidden');
+    refWindow.price1.classList.add('hidden');
+    refWindow.price1.classList.add('hidden');
   }, 300);
 }
 
@@ -109,13 +109,13 @@ function getValue(element) {
   let standartPrice;
   let vipPrice;
   if (eventsData[itemID].priceRanges) {
-    refWindow.price1.classList.remove('is-hidden');
+    refWindow.price1.classList.remove('hidden');
     price1Type = eventsData[itemID].priceRanges[0].type;
     price1Currency = eventsData[itemID].priceRanges[0].currency;
     price1Range = `${eventsData[itemID].priceRanges[0].min}-${eventsData[itemID].priceRanges[0].max}`;
     standartPrice = `${price1Type} ${price1Range} ${price1Currency}`;
     if (eventsData[itemID].priceRanges[1]) {
-      refWindow.price2.classList.remove('is-hidden');
+      refWindow.price2.classList.remove('hidden');
       price2Type = eventsData[itemID].priceRanges[1].type;
       price2Currency = eventsData[itemID].priceRanges[1].currency;
       price2Range = `${eventsData[itemID].priceRanges[1].min}-${eventsData[itemID].priceRanges[1].max}`;
