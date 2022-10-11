@@ -86,7 +86,7 @@ function createMarkup(array) {
             <p class="gallery__date">${card.dates.start.localDate}</p>
             </a>
 
-          <a class="gallery__place" href="${getCoordinates(
+          <a class="gallery__place" target="_blank" href="${getCoordinates(
             card
           )}" data="${getPlaceName(card)}">
            
@@ -96,7 +96,7 @@ function createMarkup(array) {
     })
     .join('');
   gallery.insertAdjacentHTML('beforeend', cards);
-  // offEmptyHref();
+  offEmptyHref();
   hideEmptyPlace();
 }
 
@@ -117,14 +117,31 @@ function getPlaceName(card) {
 }
 
 function offEmptyHref() {
-  const hrefToOff = document.querySelector('[href="undefined"]');
-  hrefToOff.preventDefault();
+  let hrefToOff = document.querySelectorAll('[href="undefined"]');
+
+  hrefToOff.forEach(element => {
+    element.addEventListener('click', e => {
+      e.preventDefault();
+      Notiflix.Report.info(
+        'Location Warning',
+        'Sorry, the organizer did not provide the exact address of the venue. Please specify the address on the organizers website',
+        'Okay, I understand',
+        {
+          info: {
+            backOverlayColor: 'rgba(255,192,211,0.2)',
+          },
+        }
+      );
+    });
+  });
 }
 
 function hideEmptyPlace() {
-  const placeToHide = document.querySelector('[data="undefined"]');
+  const placeToHide = document.querySelectorAll('[data="undefined"]');
   if (placeToHide) {
-    placeToHide.classList.add('is-hidden');
+    placeToHide.forEach(element => {
+      element.classList.add('is-hidden');
+    });
   }
 }
 
