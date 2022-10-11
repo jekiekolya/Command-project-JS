@@ -1,2 +1,3 @@
-# Command-project-JS-
-Team #3
+# Command-project-JS
+
+Team - Sloths

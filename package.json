@@ -5,7 +5,7 @@
   "homepage": "https://jekiekolya.github.io/Command-project-JS",
   "scripts": {
     "start": "parcel src/*.html --no-cache",
-    "build": "parcel build src/*.html --public-url /Command-project-JS/ --no-cache"
+    "build": "parcel build src/*.html --public-url /Command-project-JS/"
   },
   "repository": {
     "type": "git",
@@ -18,13 +18,19 @@
     "url": "https://github.com/goitacademy/Command-project-JS/issues"
   },
   "dependencies": {
-    "modern-normalize": "^1.1.0"
+    "axios": "^1.1.2",
+    "lazysizes": "^5.3.2",
+    "modern-normalize": "^1.1.0",
+    "notiflix": "^3.2.5",
+    "paginationjs": "^2.1.5"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",
+    "buffer": "^6.0.3",
     "parcel": "^2.6.0",
     "parcel-reporter-clean-dist": "^1.0.4",
-    "posthtml-include": "^1.7.4"
+    "posthtml-include": "^1.7.4",
+    "process": "^0.11.10"
   },
   "browserslist": "> 0.5%, last 2 versions, not dead"
 }
