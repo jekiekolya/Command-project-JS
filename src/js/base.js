@@ -43,7 +43,7 @@ function createMarkup(array) {
   let i = 0;
   const cards = array
     .map(card => {
-      return `<li class="gallery__itams">
+      return `<li class="gallery__itams" data-id="${card.id}">
           <a class="gallery-link" href="${
             card.url
           }" data-eventID="${i++}" data-id="${card.id}">
@@ -61,16 +61,46 @@ function createMarkup(array) {
             <p class="gallery__date">${card.dates.start.localDate}</p>
             </a>
 
-          <a class="gallery__place" href="http://www.google.com/maps/place/${
-            card._embedded.venues[0].location.latitude
-          },${card._embedded.venues[0].location.longitude}">
+          <a class="gallery__place" href="${getCoordinates(
+            card
+          )}" data="${getPlaceName(card)}">
            
-            <span>${card._embedded.venues[0].name}</span>
+            <span >${getPlaceName(card)}</span>
           </a>
         </li>`;
     })
     .join('');
   gallery.insertAdjacentHTML('beforeend', cards);
+  // offEmptyHref();
+  hideEmptyPlace();
+}
+
+function getCoordinates(card) {
+  try {
+    return `http://www.google.com/maps/place/${card._embedded.venues[0].location.latitude},${card._embedded.venues[0].location.longitude}`;
+  } catch (error) {
+    return undefined;
+  }
+}
+
+function getPlaceName(card) {
+  try {
+    return card._embedded.venues[0].name;
+  } catch (error) {
+    return undefined;
+  }
+}
+
+function offEmptyHref() {
+  const hrefToOff = document.querySelector('[href="undefined"]');
+  hrefToOff.preventDefault();
+}
+
+function hideEmptyPlace() {
+  const placeToHide = document.querySelector('[data="undefined"]');
+  if (placeToHide) {
+    placeToHide.classList.add('is-hidden');
+  }
 }
 
 function clearData() {
