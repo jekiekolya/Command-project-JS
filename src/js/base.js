@@ -6,6 +6,8 @@ const searchService = new SearchService();
 
 const inputRef = document.querySelector('.input-text');
 const formRef = document.querySelector('form');
+const btnnHeaderRef = document.querySelector('.button-header');
+const select = document.querySelector('.select-country');
 let country = '';
 let page = 0;
 
@@ -17,7 +19,29 @@ window.onload = function () {
   }, 500);
 };
 
+btnnHeaderRef.addEventListener('click', fetchData);
 formRef.addEventListener('submit', fetchData);
+
+select.addEventListener('change', () => {
+  country = select.value;
+  fetchDataCountry();
+});
+
+async function fetchDataCountry(e) {
+  searchQuery = inputRef.value.trim();
+  const data = await searchService
+    .fetchApiEvent(searchQuery, country, page)
+    .then(res => res._embedded.events)
+    .catch(err => {
+      Notiflix.Notify.failure(
+        'Sorry, we did not find anything, refine your query'
+      );
+    });
+  clearData();
+  if (data) {
+    createMarkup(data);
+  }
+}
 
 async function fetchData(e) {
   e.preventDefault();
