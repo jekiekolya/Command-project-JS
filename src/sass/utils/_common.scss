@@ -3,6 +3,13 @@ html {
 }
 
 body {
+  min-height: 100vh;
+
+  background: linear-gradient(
+    180deg,
+    rgba(13, 13, 13, 0.19) 0%,
+    rgba(14, 14, 14, 0.8) 100%
+  );
   background-color: var(--main-bg-color);
   color: var(--main-txt-color);
   font-family: 'Montserrat', sans-serif;
