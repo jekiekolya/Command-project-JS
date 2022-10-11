@@ -37,8 +37,8 @@ ref.boxItems.addEventListener('click', onClickEvent);
 // Open modal window
 function onClickEvent(e) {
   e.preventDefault();
-  if (!e.target.closest('.gallery__itams')) return;
-  let item = e.target.closest('.gallery__itams');
+  if (!e.target.closest('.gallery-link')) return;
+  let item = e.target.closest('.gallery-link');
 
   // Get value from item and put them to window
   let values = getValue(item);
@@ -63,8 +63,10 @@ function onKeydownESC(e) {
     ref.buttonCloseModal.removeEventListener('click', onClickButtonClose);
     ref.backDrop.removeEventListener('click', OnClickBackDrop);
     ref.buttonMoreLoad.removeEventListener('click', onClickButtonLoadMore);
-    refWindow.price1.classList.add('is-hidden');
-    refWindow.price1.classList.add('is-hidden');
+    setTimeout(() => {
+      refWindow.price1.classList.add('is-hidden');
+      refWindow.price1.classList.add('is-hidden');
+    }, 300);
   }
 }
 
@@ -75,8 +77,10 @@ function onClickButtonClose() {
   ref.buttonCloseModal.removeEventListener('click', onClickButtonClose);
   ref.backDrop.removeEventListener('click', OnClickBackDrop);
   ref.buttonMoreLoad.removeEventListener('click', onClickButtonLoadMore);
-  refWindow.price1.classList.add('is-hidden');
-  refWindow.price1.classList.add('is-hidden');
+  setTimeout(() => {
+    refWindow.price1.classList.add('is-hidden');
+    refWindow.price1.classList.add('is-hidden');
+  }, 300);
 }
 
 // Close modal window after click on backdrop
@@ -87,8 +91,10 @@ function OnClickBackDrop(e) {
     ref.buttonCloseModal.removeEventListener('click', onClickButtonClose);
     ref.backDrop.removeEventListener('click', OnClickBackDrop);
     ref.buttonMoreLoad.removeEventListener('click', onClickButtonLoadMore);
-    refWindow.price1.classList.add('is-hidden');
-    refWindow.price1.classList.add('is-hidden');
+    setTimeout(() => {
+      refWindow.price1.classList.add('is-hidden');
+      refWindow.price1.classList.add('is-hidden');
+    }, 300);
   }
 }
 
