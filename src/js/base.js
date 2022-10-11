@@ -6,6 +6,7 @@ const searchService = new SearchService();
 
 const inputRef = document.querySelector('.input-text');
 const formRef = document.querySelector('form');
+const mainContainer = document.querySelector('.container-main');
 const btnnHeaderRef = document.querySelector('.button-header');
 const select = document.querySelector('.select-country');
 let country = '';
@@ -50,19 +51,18 @@ async function fetchData(e) {
   const data = await searchService
     .fetchApiEvent(searchQuery, country, page)
     .then(res => res._embedded.events)
-    .catch(err => {
-      Notiflix.Notify.failure(
-        'Sorry, we did not find anything, refine your query'
-      );
-    });
+    .catch(err => {});
   clearData();
   if (data) {
     createMarkup(data);
+  } else {
+    createError();
   }
 }
 
 /*============================================= main page====================================================== */
 function createMarkup(array) {
+  cleanError();
   localStorage.setItem('eventsData', JSON.stringify(array));
   const gallery = document.querySelector('.gallery');
   let i = 0;
@@ -187,3 +187,17 @@ async function doMagic() {
 
 doMagic();
 /*============================================= main page====================================================== */
+
+function createError() {
+  mainContainer.insertAdjacentHTML(
+    'afterbegin',
+    `<div class="error"> Sorry, we did not find anything, refine your query! </div>`
+  );
+}
+
+function cleanError() {
+  const er = document.querySelector('.error');
+  if (er) {
+    er.remove();
+  }
+}
