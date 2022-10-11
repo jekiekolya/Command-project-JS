@@ -1,4 +1,4 @@
-.modal__backdrop.is-hidden {
+.modal__backdrop.hidden {
   opacity: 0;
   visibility: 0;
   pointer-events: none;
@@ -8,61 +8,71 @@
   position: fixed;
   top: 0;
   left: 0;
-
   width: 100%;
   height: 100%;
-
   background-color: rgba(32, 13, 29, 0.6);
-  backdrop-filter: blur(1.5px);
 
-  z-index: 200;
+  backdrop-filter: blur(3px);
+  opacity: 1;
+  visibility: visible;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-y: auto;
+
+  z-index: 2000;
   opacity: 1;
   transition: opacity 250ms var(--cubic);
 }
 
-.modal__backdrop.is-hidden .modal__window {
+.modal__backdrop.hidden .modal__window {
   transform: translate(-50%, -50%) scale(0.3);
 }
 
-.modal__window {
+.modal {
   position: absolute;
-
-  top: 50%;
+  top: 0;
   left: 50%;
-  transform: translate(-50%, -50%) scale(1);
-  transition: transform 250ms var(--cubic);
+  transform: translateX(-50%) scale(1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 20px 0;
+}
 
-  @media screen and (max-width: 767px) {
-    padding-left: 25px;
-    padding-right: 25px;
-    padding-top: 54px;
-    padding-bottom: 54px;
-    min-width: 280px;
-    height: 952px;
-    text-align: center;
-    border-radius: 150px 0px;
-  }
-
-  @media screen and (min-width: 768px) {
-    padding-left: 87px;
-    padding-right: 50px;
-    padding-top: 80px;
-    padding-bottom: 100px;
-    width: 704px;
-    height: 780px;
-  }
-
-  @media screen and (min-width: 1280px) {
-    padding-left: 74px;
-    padding-right: 74px;
-    padding-top: 54px;
-    padding-bottom: 54px;
-    width: 1034px;
-    height: 918px;
-  }
-
+.modal__window {
+  position: relative;
+  width: 272px;
+  height: 100%;
+  align-items: center;
+  padding-top: 75px;
+  padding-bottom: 104px;
+  padding-left: 12px;
+  padding-right: 17px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 150px 0;
   background-color: #fff2fd;
-  border-radius: 300px 0px;
+
+  text-align: center;
+
+  // @media screen and (min-width: 480px) {
+
+  // }
+  @media screen and (min-width: 768px) {
+    width: 595px;
+    height: auto;
+    padding-top: 28px;
+    padding-bottom: 56px;
+    padding-left: 50px;
+    padding-right: 17px;
+    border-radius: 300px 0;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 942px;
+    height: 100%;
+    padding-top: 62px;
+    padding-bottom: 62px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 300px 0;
+  }
 }
 
 .modal-btn__close {
@@ -179,6 +189,9 @@
 
   color: #0e0e0e;
 
+  @media screen and (min-width: 768px) {
+  }
+
   @media screen and (min-width: 1280px) {
     font-size: 18px;
     line-height: 1.22;
@@ -283,15 +296,54 @@
   }
 }
 
-.price1.is-hidden {
+.price1.hidden {
   display: none;
   text-transform: capitalize;
 }
-.price2.is-hidden {
+.price2.hidden {
   display: none;
   text-transform: capitalize;
 }
 
 .price1__type {
   text-transform: capitalize;
+}
+
+.flex-container {
+  @media screen and (min-width: 767px) {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+  }
+  @media screen and (min-width: 1280px) {
+    display: inline;
+  }
+}
+.flex-icon {
+  @media screen and (min-width: 767px) {
+    flex-direction: row;
+    gap: 0px;
+    width: 250px;
+  }
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-desc {
+  @media screen and (min-width: 1280px) {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+}
+.desk {
+  @media screen and (min-width: 1280px) {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-top: 50px;
+  }
 }
