@@ -30,13 +30,12 @@ ref.boxItems.addEventListener('click', onClickEvent);
 
 // Open modal window
 function onClickEvent(e) {
-  e.preventDefault();
   if (!e.target.closest('.gallery-link')) return;
+  e.preventDefault();
   let item = e.target.closest('.gallery-link');
 
   // Get value from item and put them to window
   let values = getValue(item);
-  console.log(values);
   inputDataToWindow(values);
 
   // Show modal window
