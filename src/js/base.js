@@ -45,8 +45,8 @@ async function fetchDataCountry(e) {
 
 async function fetchData(e) {
   e.preventDefault();
-  inputRef.value = '';
   searchQuery = inputRef.value.trim();
+  inputRef.value = '';
   const data = await searchService
     .fetchApiEvent(searchQuery, country, page)
     .then(res => res._embedded.events)
