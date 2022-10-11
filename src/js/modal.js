@@ -13,9 +13,8 @@ const refWindow = {
   info: document.querySelector('.modal-info'),
   data: document.querySelector('.event-date'),
   time: document.querySelector('.event-time'),
-  city: document.querySelector('.event-city'),
-  country: document.querySelector('.event-country'),
-  address: document.querySelector('.event-location'),
+  location: document.querySelector('.event-location'),
+  address: document.querySelector('.event-address'),
   name: document.querySelector('.event-name'),
   price1: document.querySelector('.price1'),
   price2: document.querySelector('.price2'),
@@ -86,7 +85,7 @@ function onCloseAndRemoveListeners() {
   ref.buttonMoreLoad.removeEventListener('click', onClickButtonLoadMore);
   setTimeout(() => {
     refWindow.price1.classList.add('hidden');
-    refWindow.price1.classList.add('hidden');
+    refWindow.price2.classList.add('hidden');
   }, 300);
 }
 
@@ -122,16 +121,19 @@ function getValue(element) {
       vipPrice = `${price2Type} ${price2Range} ${price2Currency}`;
     }
   }
+
   // Create time content
   let time = eventsData[itemID].dates.start.localTime.slice(0, 5);
-  let newTime = `${time} ${eventsData[itemID].dates.timezone}`;
+  let newTime = `${time} (${eventsData[itemID].dates.timezone})`;
+
+  // Create location content
+  let location = `${eventsData[itemID]._embedded.venues[0].city.name}, ${eventsData[itemID]._embedded.venues[0].country.name}`;
 
   const modalInfo = {
     info: info,
     data: eventsData[itemID].dates.start.localDate,
     time: newTime,
-    city: eventsData[itemID]._embedded.venues[0].city.name,
-    country: eventsData[itemID]._embedded.venues[0].country.name,
+    location: location,
     address: eventsData[itemID]._embedded.venues[0].address.line1,
     name: eventsData[itemID].name,
     standartPrice: standartPrice,
@@ -148,8 +150,7 @@ function inputDataToWindow(values) {
   refWindow.data.textContent = values.data;
   refWindow.time.textContent = values.time;
 
-  refWindow.city.textContent = values.city;
-  refWindow.country.textContent = values.country;
+  refWindow.location.textContent = values.location;
   refWindow.address.textContent = values.address;
   refWindow.name.textContent = values.name;
 

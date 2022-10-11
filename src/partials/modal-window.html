@@ -1,93 +1,147 @@
-<div class="modal__backdrop hidden" data-modal>
-  
-    <div class="modal ">
-      <div class="modal__window">
-        <button class="modal-btn__close" data-modal-close>
-          <svg class="modal-btn__close-icon" width="25" height="25">
-            <path
-              d="M1.28557 25C0.95625 25 0.626931 24.8747 0.376724 24.6227C-0.125575 24.1204 -0.125575 23.306 0.376724 22.8038L22.8043 0.376714C23.3066 -0.125571 24.121 -0.125571 24.6233 0.376714C25.1256 0.878999 25.1256 1.69333 24.6233 2.19593L2.19598 24.6227C1.94389 24.8732 1.61457 25 1.28557 25V25Z"
-            />
-            <path
-              d="M23.7147 25C23.3854 25 23.0564 24.8747 22.8059 24.6227L0.376724 2.19593C-0.125574 1.69333 -0.125574 0.878999 0.376724 0.376714C0.879022 -0.125571 1.69337 -0.125571 2.19598 0.376714L24.6233 22.8038C25.1256 23.306 25.1256 24.1204 24.6233 24.6227C24.3712 24.8732 24.0422 25 23.7147 25Z"
-            />
-          </svg>
-        </button>
-        <img class="modal__img-small" alt="" width="132" />
-        <img class="modal__img-big" alt="" width="427" />
-        <div class="modal__float">
-          <div class="modal__text-block flex-desc">
-            <h3 class="modal__title">Info</h3>
-            <p class="modal__text modal-info">
-              Atlas Weekend is the largest music festival in Ukraine.More than 200
-              artists will create a proper music festival atmosphere on 10 stages
-            </p>
+<div class="modal__backdrop hidden">
+  <div class="modal__window">
+    <button class="modal-btn__close">
+      <svg
+        class="modal-btn__close-icon"
+        width="100%"
+        height="100%"
+        viewBox="0 0 17 17"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0.874187 17C0.65025 17 0.426313 16.9148 0.256172 16.7434C-0.0853907 16.4019 -0.0853907 15.8481 0.256172 15.5066L15.5069 0.256166C15.8485 -0.0853885 16.4023 -0.0853885 16.7438 0.256166C17.0854 0.59772 17.0854 1.15146 16.7438 1.49323L1.49327 16.7434C1.32185 16.9138 1.09791 17 0.874187 17Z"
+        />
+        <path
+          d="M16.126 17C15.9021 17 15.6784 16.9148 15.508 16.7434L0.256172 1.49323C-0.0853907 1.15146 -0.0853907 0.59772 0.256172 0.256166C0.597735 -0.0853885 1.15149 -0.0853885 1.49327 0.256166L16.7438 15.5066C17.0854 15.8481 17.0854 16.4019 16.7438 16.7434C16.5724 16.9138 16.3487 17 16.126 17Z"
+        />
+      </svg>
+    </button>
+    <img class="modal__img-small" alt="" width="132" />
+    <img class="modal__img-big" alt="" width="427" />
+    <div class="modal__float">
+      <div class="modal__info-block flex-desc">
+        <h3 class="modal__title">Info</h3>
+        <p class="modal__text modal-info">
+          Atlas Weekend is the largest music festival in Ukraine.More than 200
+          artists will create a proper music festival atmosphere on 10 stages
+        </p>
+      </div>
+      <div class="modal__time-block flex-desc">
+        <h3 class="modal__title">When</h3>
+        <p class="modal__text">
+          <span class="event-date">2021-06-09</span>
+
+          <span class="event-time">20:00</span>
+        </p>
+      </div>
+      <div class="flex-container">
+        <div class="modal__location-block flex flex-desc">
+          <h3 class="modal__title">Where</h3>
+          <p class="modal__text">
+            <span class="event-location">Kyiv</span>
+            <span class="event-address">VDNH</span>
+          </p>
+        </div>
+        <div class="desk">
+          <div class="modal__name-block flex">
+            <h3 class="modal__title">Who</h3>
+            <p class="modal__text event-name">The Black Eyed Peas</p>
           </div>
-          <div class="modal__text-block flex-desc">
-            <h3 class="modal__title">When</h3>
-            <p class="modal__text">
-              <span class="event-date">2021-06-09</span>
-    
-              <span class="event-time">20:00</span>
-            </p>
-          </div>
-          <div class="flex-container">
-            <div class="modal__text-block flex flex-desc">
-              <h3 class="modal__title">Where</h3>
-              <p class="modal__text">
-                <div class="event-line-text">
-              <span class="event-city">Kyiv</span>,
-                <span class="event-country">Ukraine</span>
-                </div>
-                <span class="event-location">VDNH</span>
-              </p>
-            </div>
-            <div class="desk">
-              <div class="modal__text-block flex">
-                <h3 class="modal__title">Who</h3>
-                <p class="modal__text event-name">The Black Eyed Peas</p>
-              </div>
-              <div class="modal__prices-block flex desk">
-                <h3 class="modal__title">Prices</h3>
-                <ul class="modal__prices">
-                  <li class="modal__thumb-item price1">
-                    <p class="modal__text flex-row">
-                      <svg class="modal__prices-icon" width="29" height="19">
-                        <path d="M4.91 1.27h-4.91v29.46h4.91v-29.46z"></path>
-                        <path d="M17.26 1.27h-4.91v29.46h4.91v-29.46z"></path>
-                        <path d="M24.699 1.27h-4.91v29.46h4.91v-29.46z"></path>
-                        <path d="M44.19 1.27h-7.291v29.46h7.291v-29.46z"></path>
-                        <path d="M9.82 1.27h-2.381v29.46h2.381v-29.46z"></path>
-                        <path d="M29.46 1.27h-2.381v29.46h2.381v-29.46z"></path>
-                        <path d="M34.37 1.27h-2.381v29.46h2.381v-29.46z"></path>
-                      </svg>
-        
-                      <span class="price__standart"></span>
-                    </p>
-                    <a class="modal__btn modal__link-buy">Buy ticket</a>
-                  </li>
-                  <li class="modal__thumb-item price2 hidden">
-                    <p class="modal__text flex-row">
-                      <svg class="modal__prices-icon" width="29" height="19">
-                        <path d="M4.91 1.27h-4.91v29.46h4.91v-29.46z"></path>
-                        <path d="M17.26 1.27h-4.91v29.46h4.91v-29.46z"></path>
-                        <path d="M24.699 1.27h-4.91v29.46h4.91v-29.46z"></path>
-                        <path d="M44.19 1.27h-7.291v29.46h7.291v-29.46z"></path>
-                        <path d="M9.82 1.27h-2.381v29.46h2.381v-29.46z"></path>
-                        <path d="M29.46 1.27h-2.381v29.46h2.381v-29.46z"></path>
-                        <path d="M34.37 1.27h-2.381v29.46h2.381v-29.46z"></path>
-                      </svg>
-        
-                      <span class="price__vip"></span>
-                    </p>
-                    <a class="modal__btn modal__link-buy">Buy ticket</a>
-                  </li>
-                </ul>
-            </div>
-            </div>
+          <div class="modal__prices-block flex">
+            <h3 class="modal__title">Prices</h3>
+            <ul class="modal__prices">
+              <li class="modal__thumb-item price1 hidden">
+                <p class="modal__text flex-row price-row">
+                  <svg
+                    class="modal__prices-icon"
+                    width="24"
+                    height="17"
+                    viewBox="0 0 24 17"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M2.66668 0.833496L0 0.833496L0 16.8335H2.66668L2.66668 0.833496Z"
+                      fill="#0E0E0E"
+                    />
+                    <path
+                      d="M9.3737 0.833496L6.70703 0.833496L6.70703 16.8335H9.3737L9.3737 0.833496Z"
+                      fill="#0E0E0E"
+                    />
+                    <path
+                      d="M13.4142 0.833496L10.7476 0.833496L10.7476 16.8335H13.4142L13.4142 0.833496Z"
+                      fill="#0E0E0E"
+                    />
+                    <path
+                      d="M24.0001 0.833496L20.0405 0.833496L20.0405 16.8335H24.0001L24.0001 0.833496Z"
+                      fill="#0E0E0E"
+                    />
+                    <path
+                      d="M5.33334 0.833496L4.04041 0.833496L4.04041 16.8335H5.33334L5.33334 0.833496Z"
+                      fill="#0E0E0E"
+                    />
+                    <path
+                      d="M16 0.833496L14.707 0.833496L14.707 16.8335H16L16 0.833496Z"
+                      fill="#0E0E0E"
+                    />
+                    <path
+                      d="M18.6667 0.833496L17.3738 0.833496L17.3738 16.8335H18.6667L18.6667 0.833496Z"
+                      fill="#0E0E0E"
+                    />
+                  </svg>
+                  <span class="price__standart price-desc"></span>
+                </p>
+                <a class="modal__btn modal__link-buy">Buy ticket</a>
+              </li>
+              <li class="modal__thumb-item price2 hidden">
+                <p class="modal__text flex-row price-row">
+                  <svg
+                    class="modal__prices-icon"
+                    width="24"
+                    height="17"
+                    viewBox="0 0 24 17"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M2.66668 0.833496L0 0.833496L0 16.8335H2.66668L2.66668 0.833496Z"
+                      fill="#0E0E0E"
+                    />
+                    <path
+                      d="M9.3737 0.833496L6.70703 0.833496L6.70703 16.8335H9.3737L9.3737 0.833496Z"
+                      fill="#0E0E0E"
+                    />
+                    <path
+                      d="M13.4142 0.833496L10.7476 0.833496L10.7476 16.8335H13.4142L13.4142 0.833496Z"
+                      fill="#0E0E0E"
+                    />
+                    <path
+                      d="M24.0001 0.833496L20.0405 0.833496L20.0405 16.8335H24.0001L24.0001 0.833496Z"
+                      fill="#0E0E0E"
+                    />
+                    <path
+                      d="M5.33334 0.833496L4.04041 0.833496L4.04041 16.8335H5.33334L5.33334 0.833496Z"
+                      fill="#0E0E0E"
+                    />
+                    <path
+                      d="M16 0.833496L14.707 0.833496L14.707 16.8335H16L16 0.833496Z"
+                      fill="#0E0E0E"
+                    />
+                    <path
+                      d="M18.6667 0.833496L17.3738 0.833496L17.3738 16.8335H18.6667L18.6667 0.833496Z"
+                      fill="#0E0E0E"
+                    />
+                  </svg>
+                  <span class="price__vip price-desc"></span>
+                </p>
+                <a class="modal__btn modal__link-buy">Buy ticket</a>
+              </li>
+            </ul>
           </div>
         </div>
-        <button class="modal__btn modal__btn-more">More from this author</button>
       </div>
     </div>
-  
+    <button class="modal__btn modal__btn-more">More from this author</button>
+  </div>
 </div>
