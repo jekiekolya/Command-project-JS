@@ -315,8 +315,10 @@
     flex-direction: column;
     width: 200px;
   }
+  @media screen and (min-width: 1280px) {
+    display: inline;
+  }
 }
-
 .flex-icon {
   @media screen and (min-width: 767px) {
     flex-direction: row;
@@ -335,5 +337,13 @@
     display: flex;
     flex-direction: column;
     text-align: left;
+  }
+}
+.desk {
+  @media screen and (min-width: 1280px) {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-top: 50px;
   }
 }
