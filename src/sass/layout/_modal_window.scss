@@ -20,11 +20,6 @@
 
   z-index: 2000;
   opacity: 1;
-  transition: opacity 250ms var(--cubic);
-}
-
-.modal__backdrop.hidden .modal__window {
-  transform: translate(-50%, -50%) scale(0.3);
 }
 
 .modal {
@@ -161,6 +156,8 @@
 
 .modal__text-block {
   margin-bottom: 16px;
+  @media screen and (min-width: 1280px) {
+  }
 }
 
 .modal__title {
@@ -217,14 +214,15 @@
 }
 
 .modal__prices-block {
-  margin-bottom: 60px;
-
   @media screen and (max-width: 767px) {
     margin-bottom: 24px;
   }
-
+  @media screen and (min-width: 768px) {
+    margin-bottom: 60px;
+  }
   @media screen and (min-width: 1280px) {
     margin-top: 4px;
+    margin-bottom: 60px;
   }
 }
 
@@ -268,6 +266,7 @@
 
 .modal__btn-more {
   display: block;
+  margin-top: 70px;
   padding: 10px 15px;
   margin: 0 auto;
   color: #4c00fe;
@@ -311,9 +310,11 @@
 
 .flex-container {
   @media screen and (min-width: 767px) {
+    color: #000;
+
     display: flex;
     flex-direction: column;
-    width: 200px;
+    width: 50%;
   }
   @media screen and (min-width: 1280px) {
     display: inline;
@@ -334,6 +335,7 @@
 
 .flex-desc {
   @media screen and (min-width: 1280px) {
+    margin-bottom: 25px;
     display: flex;
     flex-direction: column;
     text-align: left;
@@ -341,9 +343,7 @@
 }
 .desk {
   @media screen and (min-width: 1280px) {
-    display: flex;
-    flex-direction: column;
     text-align: left;
-    margin-top: 50px;
+    margin-top: 16px;
   }
 }
