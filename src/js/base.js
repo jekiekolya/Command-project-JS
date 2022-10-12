@@ -6,6 +6,9 @@ const searchService = new SearchService();
 
 const inputRef = document.querySelector('.input-text');
 const formRef = document.querySelector('form');
+const mainContainer = document.querySelector('.container-main');
+const btnnHeaderRef = document.querySelector('.button-header');
+const select = document.querySelector('.select-country');
 let country = '';
 let page = 0;
 
@@ -17,10 +20,15 @@ window.onload = function () {
   }, 500);
 };
 
+btnnHeaderRef.addEventListener('click', fetchData);
 formRef.addEventListener('submit', fetchData);
 
-async function fetchData(e) {
-  e.preventDefault();
+select.addEventListener('change', () => {
+  country = select.value;
+  fetchDataCountry();
+});
+
+async function fetchDataCountry(e) {
   searchQuery = inputRef.value.trim();
   const data = await searchService
     .fetchApiEvent(searchQuery, country, page)
@@ -36,17 +44,34 @@ async function fetchData(e) {
   }
 }
 
+async function fetchData(e) {
+  e.preventDefault();
+  searchQuery = inputRef.value.trim();
+  inputRef.value = '';
+  const data = await searchService
+    .fetchApiEvent(searchQuery, country, page)
+    .then(res => res._embedded.events)
+    .catch(err => {});
+  clearData();
+  if (data) {
+    createMarkup(data);
+  } else {
+    createError();
+  }
+}
+
 /*============================================= main page====================================================== */
 function createMarkup(array) {
+  cleanError();
   localStorage.setItem('eventsData', JSON.stringify(array));
   const gallery = document.querySelector('.gallery');
   let i = 0;
   const cards = array
     .map(card => {
-      return `<li class="gallery__itams" data-eventID="${i++}" data-id="${
-        card.id
-      }">
-          <a class="gallery-link" href="${card.url}">
+      return `<li class="gallery__itams" data-id="${card.id}">
+          <a class="gallery-link" href="${
+            card.url
+          }" data-eventID="${i++}" data-id="${card.id}">
             <div class="gallary-link__wrap">
               <div class="gallary-link__border"></div>
               <img
@@ -58,16 +83,66 @@ function createMarkup(array) {
             </div>
 
             <h2 class="gallary-link__title">${card.name}</h2>
+            <p class="gallery__date">${card.dates.start.localDate}</p>
             </a>
-          <p class="gallery__date">${card.dates.start.localDate}</p>
-          <a class="gallery__place" href="">
+
+          <a class="gallery__place" target="_blank" href="${getCoordinates(
+            card
+          )}" data="${getPlaceName(card)}">
            
-            <span>${card._embedded.venues[0].name}</span>
+            <span >${getPlaceName(card)}</span>
           </a>
         </li>`;
     })
     .join('');
   gallery.insertAdjacentHTML('beforeend', cards);
+  offEmptyHref();
+  hideEmptyPlace();
+}
+
+function getCoordinates(card) {
+  try {
+    return `http://www.google.com/maps/place/${card._embedded.venues[0].location.latitude},${card._embedded.venues[0].location.longitude}`;
+  } catch (error) {
+    return undefined;
+  }
+}
+
+function getPlaceName(card) {
+  try {
+    return card._embedded.venues[0].name;
+  } catch (error) {
+    return undefined;
+  }
+}
+
+function offEmptyHref() {
+  let hrefToOff = document.querySelectorAll('[href="undefined"]');
+
+  hrefToOff.forEach(element => {
+    element.addEventListener('click', e => {
+      e.preventDefault();
+      Notiflix.Report.info(
+        'Location Warning',
+        'Sorry, the organizer did not provide the exact address of the venue. Please specify the address on the organizers website',
+        'Okay, I understand',
+        {
+          info: {
+            backOverlayColor: 'rgba(255,192,211,0.2)',
+          },
+        }
+      );
+    });
+  });
+}
+
+function hideEmptyPlace() {
+  const placeToHide = document.querySelectorAll('[data="undefined"]');
+  if (placeToHide) {
+    placeToHide.forEach(element => {
+      element.classList.add('is-hidden');
+    });
+  }
 }
 
 function clearData() {
@@ -112,3 +187,17 @@ async function doMagic() {
 
 doMagic();
 /*============================================= main page====================================================== */
+
+function createError() {
+  mainContainer.insertAdjacentHTML(
+    'afterbegin',
+    `<div class="error"> Sorry, we did not find anything, refine your query! </div>`
+  );
+}
+
+function cleanError() {
+  const er = document.querySelector('.error');
+  if (er) {
+    er.remove();
+  }
+}
