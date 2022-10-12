@@ -12,7 +12,9 @@ export default class SearchService {
 
       return await data;
     } catch (error) {
-      console.log(error);
+      Notiflix.Notify.failure(
+        'Sorry, we did not find anything, refine your query'
+      );
     }
   }
 
