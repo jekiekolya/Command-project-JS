@@ -36,9 +36,10 @@ async function fetchDataCountry(e) {
     .fetchApiEvent(searchQuery, country, page)
     .then(res => res._embedded.events)
     .catch(err => {
-      Notiflix.Notify.failure(
-        'Sorry, we did not find anything, refine your query'
-      );
+      console.log('ffffffffffffffffffffffffffffffffffff', err);
+      // Notiflix.Notify.failure(
+      //   'Sorry, we did not find anything, refine your query'
+      // );
     });
   if (data) {
     createMarkup(data);
@@ -57,7 +58,7 @@ async function fetchData(e) {
   }
   changeQuery = searchQuery;
 
-  inputRef.value = '';
+  // inputRef.value = '';
 
   const data = await searchService
     .fetchApiEvent(searchQuery, country, page)
@@ -70,9 +71,9 @@ async function fetchData(e) {
       return res._embedded.events;
     })
     .catch(err => {
-      Notiflix.Notify.failure(
-        'Sorry, we did not find anything, refine your query'
-      );
+      // Notiflix.Notify.failure(
+      //   'Sorry, we did not find anything, refine your query'
+      // );
     });
   if (data) {
     createMarkup(data);
@@ -212,13 +213,9 @@ async function doMagic() {
 doMagic();
 /*============================================= main page====================================================== */
 
-
-
 function updatePagination() {
   const listPagination = document.querySelector('.pagination ul');
   let totalPages = localStorage.getItem('totalPage');
-
-  console.log(totalPages);
   listPagination.addEventListener('click', newPagination);
   function newPagination(e) {
     const ref = {
@@ -238,12 +235,10 @@ function updatePagination() {
     ) {
       pagePagination = itemNumber.children[0].innerHTML * 1;
       page = pagePagination - 1;
-      console.log(pagePagination);
       logicFetch = false;
       submitSimulation.click();
       createPagination(totalPages, pagePagination);
       page = 0;
-      //pagePagination = 1;
       return;
     }
 
@@ -254,7 +249,6 @@ function updatePagination() {
       submitSimulation.click();
       createPagination(totalPages, pagePagination);
       page = 0;
-      //pagePagination = 1;
       return;
     }
 
@@ -265,7 +259,6 @@ function updatePagination() {
       submitSimulation.click();
       createPagination(totalPages, pagePagination);
       page = 0;
-      //pagePagination = 1;
       return;
     }
   }
@@ -326,7 +319,7 @@ function updatePagination() {
 
     listPagination.innerHTML = liTag;
     return liTag;
-}
+  }
 }
 
 function createError() {

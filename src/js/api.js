@@ -6,7 +6,7 @@ const KEY = 'cMgNevJhP92xGIzmygmG3mL7Thmyi754';
 
 export default class SearchService {
   constructor() {}
-  
+
   async fetchApiEvent(searchQuery, country, page) {
     try {
       const url = `${BASE_URL}/events?keyword=${searchQuery}&apikey=${KEY}&countryCode=${country}&size=16&page=${page}`;
