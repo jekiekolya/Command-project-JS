@@ -1,22 +1,29 @@
 .main {
-  margin-top: -102px;
-  padding-top: 26px;
+  // margin-top: -102px;
+  // padding-top: 26px;
+  margin-bottom: -244px;
+  padding-bottom: 244px;
   background-color: #0e0e0e;
   background-image: url(../images/main/body_tab.png);
   background-repeat: no-repeat;
   background-size: cover;
 
   @include mq(tab-only) {
+    margin-bottom: -232px;
+    padding-bottom: 232px;
     background-size: cover, auto;
-    background-position: top, center;
+    background-position: top, left bottom 265px;
 
     background-image: url(../images/main/body_desk.png),
       url(../images/main/main_tab.svg);
   }
 
   @include mq(desk) {
+    margin-bottom: -230px;
+    padding-bottom: 230px;
+
     background-size: cover, auto;
-    background-position: top, center;
+    background-position: top, bottom;
 
     background-image: url(../images/main/body_desk.png),
       url(../images/main/main_desk.svg);
@@ -24,14 +31,20 @@
 }
 
 .gallery {
+  margin-top: -47px;
   display: flex;
   flex-wrap: wrap;
   row-gap: 32px;
   column-gap: 20px;
 
   @include mq(tab) {
+    margin-top: -80px;
     row-gap: 40px;
     column-gap: 32px;
+  }
+
+  @include mq(desk) {
+    margin-top: -57px;
   }
 }
 
@@ -218,18 +231,22 @@
 }
 
 .error {
-  padding-top: 150px;
+  padding-top: 30px;
+  margin-bottom: 50px;
   color: var(--accent-color);
   font-size: 20px;
   text-align: center;
   font-weight: 600;
-  height: 300px;
+  height: 200px;
   background-position: bottom;
   background-size: 150px;
   background-repeat: no-repeat;
   background-image: url(../images/frame.svg);
 
   @include mq(tab) {
+    padding-top: 50px;
+    margin-bottom: 80px;
+
     font-size: 24px;
   }
 }
