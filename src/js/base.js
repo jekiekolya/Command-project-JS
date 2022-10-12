@@ -38,9 +38,10 @@ async function fetchDataCountry(e) {
         'Sorry, we did not find anything, refine your query'
       );
     });
-  clearData();
   if (data) {
     createMarkup(data);
+  } else {
+    createError();
   }
 }
 
@@ -51,8 +52,11 @@ async function fetchData(e) {
   const data = await searchService
     .fetchApiEvent(searchQuery, country, page)
     .then(res => res._embedded.events)
-    .catch(err => {});
-  clearData();
+    .catch(err => {
+      Notiflix.Notify.failure(
+        'Sorry, we did not find anything, refine your query'
+      );
+    });
   if (data) {
     createMarkup(data);
   } else {
@@ -62,6 +66,7 @@ async function fetchData(e) {
 
 /*============================================= main page====================================================== */
 function createMarkup(array) {
+  clearData();
   cleanError();
   localStorage.setItem('eventsData', JSON.stringify(array));
   const gallery = document.querySelector('.gallery');
@@ -189,6 +194,9 @@ doMagic();
 /*============================================= main page====================================================== */
 
 function createError() {
+  clearData();
+  cleanError();
+
   mainContainer.insertAdjacentHTML(
     'afterbegin',
     `<div class="error"> Sorry, we did not find anything, refine your query! </div>`
