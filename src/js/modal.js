@@ -6,6 +6,7 @@ const ref = {
   buttonMoreLoad: document.querySelector('.modal__btn-more'),
   inputResearch: document.querySelector('.input-text'),
   buttonSubmit: document.querySelector('.button-header'),
+  body: document.querySelector('body'),
 };
 
 // Get ref to element on window where textContent is changing
@@ -45,6 +46,7 @@ function onClickEvent(e) {
   ref.buttonCloseModal.addEventListener('click', onClickButtonClose);
   ref.backDrop.addEventListener('click', OnClickBackDrop);
   ref.buttonMoreLoad.addEventListener('click', onClickButtonLoadMore);
+  ref.body.classList.add('disable-scroll');
 }
 
 // Close modal window after press ESC
@@ -83,6 +85,7 @@ function onCloseAndRemoveListeners() {
   ref.buttonCloseModal.removeEventListener('click', onClickButtonClose);
   ref.backDrop.removeEventListener('click', OnClickBackDrop);
   ref.buttonMoreLoad.removeEventListener('click', onClickButtonLoadMore);
+  ref.body.classList.remove('disable-scroll');
   setTimeout(() => {
     refWindow.price1.classList.add('hidden');
     refWindow.price2.classList.add('hidden');
