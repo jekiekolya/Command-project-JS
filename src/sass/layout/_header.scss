@@ -87,17 +87,6 @@ screen and (min-width: (1280px - 0.02)) and (min-resolution: 2dppx) {
   }
 }
 
-.container {
-  width: 100%;
-
-  @media screen and (min-width: (768px - 0.02)) {
-    max-width: 704px;
-  }
-
-  @media screen and (min-width: (1280px - 0.02)) {
-    max-width: 1248px;
-  }
-}
 
 .header-box {
   padding-bottom: 112px;
@@ -247,15 +236,9 @@ screen and (min-width: (1280px - 0.02)) and (min-resolution: 2dppx) {
   position: absolute;
   width: 50px;
   height: 40px;
-  top: -80%;
   right: 15px;
   background-color: transparent;
   border-color: transparent;
-
-  @media screen and (min-width: (768px - 0.02)) {
-    top: 0;
-    right: 0;
-  }
 }
 
 .header-icon-search {
