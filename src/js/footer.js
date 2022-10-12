@@ -14,7 +14,7 @@ function createPagination(totalPages, page) {
     })"><span><i class="angle-left"></i> < Prev</span></li>`;
   }
   if (page > 2) {
-    liTag += `<li class="first numb" onclick="createPagination(totalPages, 1)"><span>1</span></li>`;
+    liTag += `<li class="first numb" onclick="createPagination(totalPages, 1)"><span class="number_page">1</span></li>`;
     if (page > 3) {
       liTag += `<li class="dots"><span>...</span></li>`;
     }
@@ -56,6 +56,7 @@ function createPagination(totalPages, page) {
       page + 1
     })"><span>Next ><i class="angle-right"></i></span></li>`;
   }
+
   element.innerHTML = liTag;
   return liTag;
 }
