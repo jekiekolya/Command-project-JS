@@ -133,15 +133,13 @@ screen and (min-width: (1280px - 0.02)) and (min-resolution: 2dppx) {
 }
 
 .post {
-  max-width: 100%;
-  width: 280px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
 
   @media screen and (min-width: (768px - 0.02)) {
     display: flex;
     justify-content: center;
-    width: 704px;
   }
 }
 
@@ -160,12 +158,12 @@ screen and (min-width: (1280px - 0.02)) and (min-resolution: 2dppx) {
   @media screen and (min-width: (768px - 0.02)) {
     flex-direction: row;
     gap: 32px;
+    width: 704px;
   }
 }
 
 .form-search {
   position: relative;
-  max-width: 280px;
   width: 100%;
 
   @media screen and (min-width: (768px - 0.02)) {
@@ -178,11 +176,10 @@ screen and (min-width: (1280px - 0.02)) and (min-resolution: 2dppx) {
 }
 
 .input {
-  max-width: 280px;
   width: 100%;
   height: 40px;
   padding-left: 32px;
-  padding-right: 32px;
+  padding-right: 55px;
   padding-top: 10px;
   padding-bottom: 10px;
   font-weight: 400;
@@ -224,10 +221,6 @@ screen and (min-width: (1280px - 0.02)) and (min-resolution: 2dppx) {
   color: black;
 }
 
-.country-search {
-  position: relative;
-}
-
 .country-option {
   color: #939393;
 }
@@ -263,6 +256,7 @@ screen and (min-width: (1280px - 0.02)) and (min-resolution: 2dppx) {
 }
 
 .country-search {
+  position: relative;
   height: 40px;
   font-size: 16px;
   font-family: sans-serif;
@@ -274,7 +268,6 @@ screen and (min-width: (1280px - 0.02)) and (min-resolution: 2dppx) {
   appearance: none;
   position: relative;
   z-index: 1000;
-  max-width: 280px;
   width: 100%;
 
   @media screen and (min-width: (768px - 0.02)) {
@@ -361,7 +354,7 @@ div.choices__placeholder {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-div.choices__inner:hover div.choices__placeholder{
+div.choices__inner:hover div.choices__placeholder {
   color: black;
 }
 

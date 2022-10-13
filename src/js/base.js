@@ -267,7 +267,7 @@ function updatePagination() {
   function createPagination(totalPages, page) {
     totalPages = localStorage.getItem('totalPage');
     let liTag = '';
-    let active;
+    let active = '';
     let beforePage = page - 1;
     let afterPage = page + 1;
     if (page > 1) {
@@ -307,8 +307,8 @@ function updatePagination() {
       liTag += `<li class="numb ${active}"><span>${pageLength}</span></li>`;
     }
 
-    if (page < totalPages - 1) {
-      if (page < totalPages - 2) {
+    if (page < totalPages - 2) {
+      if (page < totalPages - 1) {
         liTag += `<li class="dots"><span>...</span></li>`;
       }
       liTag += `<li class="last numb"><span>${totalPages}</span></li>`;
