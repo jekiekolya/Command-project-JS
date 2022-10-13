@@ -31,7 +31,7 @@ select.addEventListener('change', () => {
 });
 
 async function fetchDataCountry(e) {
-  searchQuery = inputRef.value.trim();
+  let searchQuery = inputRef.value.trim();
   const data = await searchService
     .fetchApiEvent(searchQuery, country, page)
     .then(res => res._embedded.events)
@@ -50,7 +50,7 @@ async function fetchDataCountry(e) {
 async function fetchData(e) {
   e.preventDefault();
 
-  searchQuery = inputRef.value.trim();
+  let searchQuery = inputRef.value.trim();
 
   if (searchQuery !== changeQuery) {
     logicFetch = true;
