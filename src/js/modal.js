@@ -23,6 +23,8 @@ const refWindow = {
   vipPrice: document.querySelector('.price__vip'),
   imageBig: document.querySelector('.modal__img-big'),
   imageLittle: document.querySelector('.modal__img-small'),
+  bayTicket1: document.querySelector('.modal__link-buy1'),
+  bayTicket2: document.querySelector('.modal__link-buy2'),
 };
 
 // Add event listener for open
@@ -110,12 +112,14 @@ function getValue(element) {
   let price2Range;
   let standartPrice;
   let vipPrice;
+  let linkPrice;
   if (eventsData[itemID].priceRanges) {
     refWindow.price1.classList.remove('hidden');
     price1Type = eventsData[itemID].priceRanges[0].type;
     price1Currency = eventsData[itemID].priceRanges[0].currency;
     price1Range = `${eventsData[itemID].priceRanges[0].min}-${eventsData[itemID].priceRanges[0].max}`;
     standartPrice = `${price1Type} ${price1Range} ${price1Currency}`;
+    linkPrice = eventsData[itemID].url;
     if (eventsData[itemID].priceRanges[1]) {
       refWindow.price2.classList.remove('hidden');
       price2Type = eventsData[itemID].priceRanges[1].type;
@@ -142,6 +146,7 @@ function getValue(element) {
     standartPrice: standartPrice,
     vipPrice: vipPrice,
     image: image.getAttribute('src'),
+    linkPrice: linkPrice,
   };
 
   return modalInfo;
@@ -162,4 +167,6 @@ function inputDataToWindow(values) {
 
   refWindow.imageBig.setAttribute('src', `${values.image}`);
   refWindow.imageLittle.setAttribute('src', `${values.image}`);
+  refWindow.bayTicket1.setAttribute('href', `${values.linkPrice}`);
+  refWindow.bayTicket2.setAttribute('href', `${values.linkPrice}`);
 }
