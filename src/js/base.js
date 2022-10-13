@@ -10,6 +10,7 @@ const formRef = document.querySelector('form');
 const mainContainer = document.querySelector('.container-main');
 const btnnHeaderRef = document.querySelector('.button-header');
 const select = document.querySelector('.select-country');
+const listPagination = document.querySelector('.pagination ul');
 let country = '';
 let page = 0;
 let logicFetch = true;
@@ -34,7 +35,12 @@ async function fetchDataCountry(e) {
   let searchQuery = inputRef.value.trim();
   const data = await searchService
     .fetchApiEvent(searchQuery, country, page)
-    .then(res => res._embedded.events)
+    .then(res => {
+      pagePagination = 1;
+      updatePagination();
+
+      return res._embedded.events;
+    })
     .catch(err => {
       // Notiflix.Notify.failure(
       //   'Sorry, we did not find anything, refine your query'
@@ -215,58 +221,56 @@ async function doMagic() {
 
 doMagic();
 /*============================================= main page====================================================== */
+listPagination.addEventListener('click', newPagination);
+let totalPages = localStorage.getItem('totalPage');
 
-function updatePagination() {
-  const listPagination = document.querySelector('.pagination ul');
-  listPagination.addEventListener('click', newPagination);
-  let totalPages = localStorage.getItem('totalPage');
+function newPagination(e) {
+  const ref = {
+    itemActive: listPagination.querySelector('.active.numb'),
+    itemNext: listPagination.querySelector('.next.numb'),
+    itemPrev: listPagination.querySelector('.prev.numb'),
+    itemDots: listPagination.querySelector('.dots'),
+  };
+  let itemNumber = e.target.closest('.numb');
+  if (itemNumber === null) return;
 
-  function newPagination(e) {
-    const ref = {
-      itemActive: listPagination.querySelector('.active.numb'),
-      itemNext: listPagination.querySelector('.next.numb'),
-      itemPrev: listPagination.querySelector('.prev.numb'),
-      itemDots: listPagination.querySelector('.dots'),
-    };
-    let itemNumber = e.target.closest('.numb');
-    if (itemNumber === null) return;
-
-    if (
-      !itemNumber.classList.contains('prev') &&
-      !itemNumber.classList.contains('next') &&
-      !itemNumber.classList.contains('dots') &&
-      !itemNumber.classList.contains('active')
-    ) {
-      pagePagination = itemNumber.children[0].innerHTML * 1;
-      page = pagePagination - 1;
-      logicFetch = false;
-      submitSimulation.click();
-      createPagination(totalPages, pagePagination);
-      page = 0;
-      return;
-    }
-
-    if (itemNumber === ref.itemNext) {
-      pagePagination += 1;
-      page = pagePagination - 1;
-      logicFetch = false;
-      submitSimulation.click();
-      createPagination(totalPages, pagePagination);
-      page = 0;
-      return;
-    }
-
-    if (itemNumber === ref.itemPrev) {
-      pagePagination -= 1;
-      page = pagePagination - 1;
-      logicFetch = false;
-      submitSimulation.click();
-      createPagination(totalPages, pagePagination);
-      page = 0;
-      return;
-    }
+  if (
+    !itemNumber.classList.contains('prev') &&
+    !itemNumber.classList.contains('next') &&
+    !itemNumber.classList.contains('dots') &&
+    !itemNumber.classList.contains('active')
+  ) {
+    pagePagination = itemNumber.children[0].innerHTML * 1;
+    page = pagePagination - 1;
+    logicFetch = false;
+    submitSimulation.click();
+    updatePagination();
+    page = 0;
+    return;
   }
 
+  if (itemNumber === ref.itemNext) {
+    pagePagination += 1;
+    page = pagePagination - 1;
+    logicFetch = false;
+    submitSimulation.click();
+    updatePagination();
+    page = 0;
+    return;
+  }
+
+  if (itemNumber === ref.itemPrev) {
+    pagePagination -= 1;
+    page = pagePagination - 1;
+    logicFetch = false;
+    submitSimulation.click();
+    updatePagination();
+    page = 0;
+    return;
+  }
+}
+
+function updatePagination() {
   listPagination.innerHTML = createPagination(totalPages, pagePagination);
   function createPagination(totalPages, page) {
     totalPages = localStorage.getItem('totalPage');
