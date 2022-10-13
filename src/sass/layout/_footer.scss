@@ -85,9 +85,7 @@
   font-size: 18px;
   line-height: 22px;
   text-align: center;
-  color: var(--main-txt-color);
-  border: 1px solid var(--main-bg-color);
-  border-radius: 10px 0px;
+ 
 }
 
 @media screen and (min-width: 768px) {
@@ -95,9 +93,7 @@
     font-size: 18px;
     line-height: 22px;
     text-align: center;
-    color: var(--main-txt-color);
-    border: 1px solid var(--main-bg-color);
-    border-radius: 10px 0px;
+   
   }
 }
 
@@ -106,9 +102,9 @@
     font-size: 18px;
     line-height: 22px;
     text-align: center;
-    color: var(--main-txt-color);
-    border: 1px solid var(--main-bg-color);
-    border-radius: 10px 0px;
+   
+     
+   
   }
 }
 
@@ -151,9 +147,19 @@
   margin-right: 0px;
 }
 
-.pagination ul li.active,
-.pagination ul li:focus,
-.pagination ul li:hover {
+ li.btn.active,
+ li:focus,
+ li:hover {
+  
+  box-sizing: border-box;
+  border: 1px solid var(--accent-color);
+  transition: color 250ms var(--cubic), border 250ms var(--cubic);
+}
+
+
+.pagination li.numb.active,
+.pagination li.numb:focus,
+.pagination li.numb:hover {
   color: var(--accent-color);
   box-sizing: border-box;
   border: 1px solid var(--accent-color);
@@ -161,9 +167,9 @@
 }
 
 @media screen and (min-width: 768px) {
-  .pagination ul li.active,
-  .pagination ul li:focus,
-  .pagination ul li:hover {
+  .pagination li.numb.active,
+  .pagination li.numb:focus,
+  .pagination li.numb:hover {
     color: var(--accent-color);
     box-sizing: border-box;
     border: 1px solid var(--accent-color);
@@ -172,9 +178,9 @@
 }
 
 @media screen and (min-width: 1200px) {
-  .pagination ul li.active,
-  .pagination ul li:focus,
-  .pagination ul li:hover {
+  li.numb.active,
+  li.numb:focus,
+  li.numb:hover {
     color: var(--accent-color);
     box-sizing: border-box;
     border: 1px solid var(--accent-color);
@@ -182,20 +188,20 @@
   }
 }
 
-.pagination ul li.btn {
+.pagination ul li {
   border: 1px solid var(--main-bg-color);
   border-radius: 10px 0px;
 }
 
 @media screen and (min-width: 768px) {
-  .pagination ul li.btn {
+  .pagination ul li {
     border: 1px solid var(--main-bg-color);
     border-radius: 10px 0px;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .pagination ul li.btn {
+  .pagination ul li {
     border: 1px solid var(--main-bg-color);
     border-radius: 10px 0px;
   }
