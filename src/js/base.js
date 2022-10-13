@@ -283,11 +283,11 @@ function updatePagination() {
     if (page === totalPages) {
       beforePage = beforePage - 2;
     } else if (page === totalPages - 1) {
-      beforePage = beforePage - 1;
+      beforePage = beforePage;
     }
 
     if (page === 1) {
-      afterPage = afterPage + 2;
+      afterPage = afterPage + 1;
     } else if (page === 2) {
       afterPage = afterPage + 1;
     }
