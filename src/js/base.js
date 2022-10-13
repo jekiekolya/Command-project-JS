@@ -91,6 +91,7 @@ async function fetchData(e) {
 function createMarkup(array) {
   const main = document.querySelector('.main');
   main.style.marginBottom = '';
+  main.style.paddingBottom = '';
   clearData();
   cleanError();
   localStorage.setItem('eventsData', JSON.stringify(array));
@@ -346,7 +347,8 @@ function createError() {
     `<div class="error"> Sorry, we did not find anything, refine your query! </div>`
   );
   const main = document.querySelector('.main');
-  main.style.marginBottom = '20px';
+  main.style.marginBottom = '0px';
+  main.style.paddingBottom = '0px';
 }
 
 function cleanError() {
