@@ -36,7 +36,6 @@ async function fetchDataCountry(e) {
     .fetchApiEvent(searchQuery, country, page)
     .then(res => res._embedded.events)
     .catch(err => {
-      console.log('ffffffffffffffffffffffffffffffffffff', err);
       // Notiflix.Notify.failure(
       //   'Sorry, we did not find anything, refine your query'
       // );
