@@ -166,10 +166,6 @@ screen and (min-width: (1280px - 0.02)) and (min-resolution: 2dppx) {
   position: relative;
   width: 100%;
 
-  @media screen and (min-width: (768px - 0.02)) {
-    width: 366px;
-  }
-
   @media screen and (min-width: (1280px - 0.02)) {
     width: 288px;
   }
@@ -193,10 +189,6 @@ screen and (min-width: (1280px - 0.02)) and (min-resolution: 2dppx) {
   background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(20px);
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-  @media screen and (min-width: (768px - 0.02)) {
-    width: 366px;
-  }
 
   @media screen and (min-width: (1280px - 0.02)) {
     width: 288px;
@@ -271,7 +263,7 @@ screen and (min-width: (1280px - 0.02)) and (min-resolution: 2dppx) {
   width: 100%;
 
   @media screen and (min-width: (768px - 0.02)) {
-    width: 366px;
+    // width: 366px;
   }
 
   @media screen and (min-width: (1280px - 0.02)) {
