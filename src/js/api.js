@@ -2,7 +2,7 @@ import axios from 'axios';
 
 //import logicFetch from './base';
 const BASE_URL = 'https://app.ticketmaster.com/discovery/v2';
-const KEY = 'cMgNevJhP92xGIzmygmG3mL7Thmyi754';
+const KEY = 'AVb62xy4mejBfqrebWvwxQ75zF1yJMBb';
 
 export default class SearchService {
   constructor() {}
