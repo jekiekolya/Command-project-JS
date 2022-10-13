@@ -89,6 +89,8 @@ async function fetchData(e) {
 
 /*============================================= main page====================================================== */
 function createMarkup(array) {
+  const main = document.querySelector('.main');
+  main.style.marginBottom = '';
   clearData();
   cleanError();
   localStorage.setItem('eventsData', JSON.stringify(array));
@@ -343,6 +345,8 @@ function createError() {
     'afterbegin',
     `<div class="error"> Sorry, we did not find anything, refine your query! </div>`
   );
+  const main = document.querySelector('.main');
+  main.style.marginBottom = '20px';
 }
 
 function cleanError() {
