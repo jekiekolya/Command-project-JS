@@ -133,7 +133,11 @@ function getCoordinates(card) {
 
 function getPlaceName(card) {
   try {
-    return card._embedded.venues[0].name;
+    if (card._embedded.venues[0].name) {
+      return card._embedded.venues[0].name;
+    } else {
+      return card._embedded.venues[0].city.name;
+    }
   } catch (error) {
     return undefined;
   }
