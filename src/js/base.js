@@ -184,7 +184,7 @@ function lowQualitiPhotoPicker(array) {
 
 function rightPhotoUrl(array) {
   array.sort((a, b) => {
-    return a.width - b.width;
+    return b.width - a.width;
   });
 
   try {

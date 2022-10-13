@@ -77,6 +77,8 @@
   @include mq(mob-only) {
     min-height: 120px;
     min-width: 120px;
+    height: 120px;
+    object-fit: cover;
   }
 
   @include mq(tab) {
