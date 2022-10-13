@@ -142,13 +142,7 @@
   margin-right: 0px;
 }
 
-.pagination li.btn.active,
-.pagination li:focus,
-.pagination li:hover {
-  box-sizing: border-box;
-  border: 1px solid var(--accent-color);
-  transition: color 250ms var(--cubic), border 250ms var(--cubic);
-}
+
 
 .pagination li.numb.active,
 .pagination li.numb:focus,
@@ -171,9 +165,9 @@
 }
 
 @media screen and (min-width: 1200px) {
-  li.numb.active,
-  li.numb:focus,
-  li.numb:hover {
+  .pagination li.numb.active,
+  .pagination li.numb:focus,
+  .pagination li.numb:hover {
     color: var(--accent-color);
     box-sizing: border-box;
     border: 1px solid var(--accent-color);
