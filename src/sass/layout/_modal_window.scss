@@ -21,10 +21,10 @@
   transition: opacity 250ms var(--cubic);
 }
 
-.test {
+.position-modal {
   position: fixed;
   height: 1000px;
-  width: 100%;
+  width: 1px;
   top: 0;
   left: 50%;
   transform: translate(-50%, 0%);
