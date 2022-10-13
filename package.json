@@ -4,7 +4,7 @@
   "description": "",
   "homepage": "https://jekiekolya.github.io/Command-project-JS",
   "scripts": {
-    "start": "parcel src/*.html --no-cache",
+    "start": "parcel src/*.html",
     "build": "parcel build src/*.html --public-url /Command-project-JS/"
   },
   "repository": {
