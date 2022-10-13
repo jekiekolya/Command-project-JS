@@ -214,8 +214,9 @@ doMagic();
 
 function updatePagination() {
   const listPagination = document.querySelector('.pagination ul');
-  let totalPages = localStorage.getItem('totalPage');
   listPagination.addEventListener('click', newPagination);
+  let totalPages = localStorage.getItem('totalPage');
+
   function newPagination(e) {
     const ref = {
       itemActive: listPagination.querySelector('.active.numb'),
