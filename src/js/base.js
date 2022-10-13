@@ -265,6 +265,13 @@ function updatePagination() {
   listPagination.innerHTML = createPagination(totalPages, pagePagination);
   function createPagination(totalPages, page) {
     totalPages = localStorage.getItem('totalPage');
+    listPagination.classList.remove('visually-hidden');
+    if (totalPages * 1 === 0) {
+      listPagination.classList.add('visually-hidden');
+      console.log(listPagination);
+      console.log(totalPages);
+    }
+
     let liTag = '';
     let active = '';
     let beforePage = page - 1;
