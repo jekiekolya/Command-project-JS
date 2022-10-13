@@ -269,8 +269,6 @@ function updatePagination() {
     listPagination.classList.remove('visually-hidden');
     if (totalPages * 1 === 0) {
       listPagination.classList.add('visually-hidden');
-      console.log(listPagination);
-      console.log(totalPages);
     }
 
     let liTag = '';
