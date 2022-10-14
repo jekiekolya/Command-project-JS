@@ -68,6 +68,7 @@
   position: relative;
   border-radius: 50px 0px;
   width: calc(100% - 10px);
+  object-fit: cover;
 
   .gallery-link:hover &,
   .gallery-link:focus & {
@@ -78,7 +79,6 @@
     min-height: 120px;
     min-width: 120px;
     height: 120px;
-    object-fit: cover;
   }
 
   @include mq(tab) {
